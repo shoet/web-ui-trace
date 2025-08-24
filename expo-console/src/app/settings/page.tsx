@@ -12,10 +12,10 @@ export default function SettingPage() {
       <div className={clsx("flex flex-col gap-10 max-w-[1200px] mx-auto")}>
         <div className="text-2xl font-bold">User settings</div>
         <AccountSettings />
-        <AboutYou />
-        <Email />
+        <AboutYou id="about-you" />
+        <Email id="email" />
         <ChangePassword />
-        <EnableTwoFactorAuthentication />
+        <EnableTwoFactorAuthentication id="two-factor-authentication" />
         <Connections id="connections" />
         <div>Security activity</div>
         <div>Convert your account into an organization</div>

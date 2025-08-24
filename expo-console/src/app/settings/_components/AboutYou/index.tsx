@@ -3,6 +3,7 @@ import { ComponentWithBorder } from "../ComponentWithBorder";
 import { PrimaryButton } from "@/components/Button";
 import { TextInput } from "@/components/TextInput";
 import { SectionTitleAboutYou } from "../SectionTitle";
+import { ComponentProps } from "react";
 
 const Footer = () => {
   return (
@@ -12,9 +13,10 @@ const Footer = () => {
   );
 };
 
-export const AboutYou = () => {
+export const AboutYou = (props: ComponentProps<"div">) => {
+  const { ...rest } = props;
   return (
-    <ComponentWithBorder id="about-you" footerComponent={<Footer />}>
+    <ComponentWithBorder footerComponent={<Footer />} {...rest}>
       <div className={clsx("flex flex-col gap-2")}>
         <SectionTitleAboutYou />
         <div className={clsx("flex flex-row items-center gap-2")}>

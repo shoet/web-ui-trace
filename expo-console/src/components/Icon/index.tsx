@@ -43,12 +43,9 @@ const withLucideReactIcon = (Icon: LucideIcon) => {
 };
 
 const withFontAwesomeIcon = (Icon: FontAwesomeIconType) => {
-  return (
-    props: { size: number } & Omit<FontAwesomeIconProps, "icon" | "size">,
-  ) => {
+  return (props: Omit<FontAwesomeIconProps, "icon">) => {
     const { size, ...rest } = props;
-    const sizeClass = `w-[${size}px] h-[${size}px]`;
-    return <FontAwesomeIcon className={sizeClass} {...rest} icon={Icon} />;
+    return <FontAwesomeIcon {...rest} icon={Icon} />;
   };
 };
 

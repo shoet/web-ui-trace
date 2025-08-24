@@ -3,10 +3,12 @@ import { ComponentWithBorder } from "../ComponentWithBorder";
 import { SectionTitleTwoFactorAuth } from "../SectionTitle";
 import { PrimaryButton } from "@/components/Button";
 import { IconArrowRight } from "@/components/Icon";
+import { ComponentProps } from "react";
 
-export const EnableTwoFactorAuthentication = () => {
+export const EnableTwoFactorAuthentication = (props: ComponentProps<"div">) => {
+  const { ...rest } = props;
   return (
-    <ComponentWithBorder id="two-factor-authentication">
+    <ComponentWithBorder {...rest}>
       <div className={clsx("flex flex-row justify-between items-center gap-3")}>
         <div className={clsx("flex flex-col justify-start")}>
           <SectionTitleTwoFactorAuth />

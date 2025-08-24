@@ -40,6 +40,9 @@ export default function RootLayout({
           </div>
           <div className={clsx("flex-1")}>{children}</div>
         </div>
+        <div className={clsx("border-t border-t-gray-500 p-5 h-[500px]")}>
+          footer
+        </div>
       </body>
     </html>
   );

@@ -28,7 +28,7 @@ export const Connections = (props: ComponentProps<"div">) => {
           <div
             className={clsx("flex flex-row items-center gap-3 justify-start")}
           >
-            <IconDiscord size={20} color={"var(--color-gray-500)"} />
+            <IconDiscord className="h-[16px]" color={"var(--color-gray-500)"} />
             <span>
               {"Discord - "}
               <span className={clsx("text-text-description")}>
@@ -47,7 +47,7 @@ export const Connections = (props: ComponentProps<"div">) => {
           <div
             className={clsx("flex flex-row items-center gap-3 justify-start")}
           >
-            <IconGitHub size={20} color={"var(--color-gray-500)"} />
+            <IconGitHub className="h-[16px]" color={"var(--color-gray-500)"} />
             <span>
               {"GitHub - "}
               <span className={clsx("text-text-description")}>

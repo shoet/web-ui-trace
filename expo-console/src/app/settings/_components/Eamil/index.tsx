@@ -4,6 +4,7 @@ import { ComponentWithBorder } from "../ComponentWithBorder";
 import { PrimaryButton } from "@/components/Button";
 import { SectionTitleEmail } from "../SectionTitle";
 import { Badge } from "../Badge";
+import { ComponentProps } from "react";
 
 const Footer = () => {
   return (
@@ -13,9 +14,10 @@ const Footer = () => {
   );
 };
 
-export const Email = () => {
+export const Email = (props: ComponentProps<"div">) => {
+  const { ...rest } = props;
   return (
-    <ComponentWithBorder id="email" footerComponent={<Footer />}>
+    <ComponentWithBorder footerComponent={<Footer />} {...rest}>
       <div className={clsx("flex flex-col justify-start gap-2")}>
         <SectionTitleEmail />
         <div className={clsx("text-sm text-text-description")}>

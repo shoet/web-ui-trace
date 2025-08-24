@@ -1,6 +1,6 @@
 import clsx from "clsx";
 import { SectionTitleConnection } from "../SectionTitle";
-import { IconArrowUpRight, IconConnect } from "@/components/Icon";
+import { IconArrowUpRight, IconDiscord, IconGitHub } from "@/components/Icon";
 import { DangerButton, PrimaryButton, SecondaryButton } from "../PrimaryButton";
 
 export const Connections = () => {
@@ -22,7 +22,7 @@ export const Connections = () => {
           <div
             className={clsx("flex flex-row items-center gap-3 justify-start")}
           >
-            <IconConnect size={20} color={"var(--color-gray-500)"} />
+            <IconDiscord size={20} color={"var(--color-gray-500)"} />
             <span>
               {"Discord - "}
               <span className={clsx("text-text-description")}>
@@ -41,7 +41,7 @@ export const Connections = () => {
           <div
             className={clsx("flex flex-row items-center gap-3 justify-start")}
           >
-            <IconConnect size={20} color={"var(--color-gray-500)"} />
+            <IconGitHub size={20} color={"var(--color-gray-500)"} />
             <span>
               {"GitHub - "}
               <span className={clsx("text-text-description")}>

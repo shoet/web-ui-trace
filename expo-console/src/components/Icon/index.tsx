@@ -18,6 +18,7 @@ import {
   CircleX,
   Eye,
   EyeOff,
+  MoveUpRight,
 } from "lucide-react";
 
 type LucideReactIconProps = {
@@ -49,3 +50,4 @@ export const IconWarn = withLucideReactIcon(TriangleAlert);
 export const IconAlert = withLucideReactIcon(CircleX);
 export const IconEye = withLucideReactIcon(Eye);
 export const IconEyeOff = withLucideReactIcon(EyeOff);
+export const IconArrowUpRight = withLucideReactIcon(MoveUpRight);

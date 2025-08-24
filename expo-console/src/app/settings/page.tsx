@@ -4,6 +4,7 @@ import { AboutYou } from "./_components/AboutYou";
 import { Email } from "./_components/Eamil";
 import { ChangePassword } from "./_components/ChangePassword";
 import { EnableTwoFactorAuthentication } from "./_components/EnableTwoFactorAuthentication";
+import { Connections } from "./_components/Connections";
 
 export default function SettingPage() {
   return (
@@ -15,7 +16,7 @@ export default function SettingPage() {
         <Email />
         <ChangePassword />
         <EnableTwoFactorAuthentication />
-        <div>Connections</div>
+        <Connections />
         <div>Security activity</div>
         <div>Convert your account into an organization</div>
         <div>Rename account</div>

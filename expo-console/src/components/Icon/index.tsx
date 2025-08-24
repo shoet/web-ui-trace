@@ -12,6 +12,10 @@ import {
   AtSign,
   LogOut,
   Trash2,
+  Check,
+  Info,
+  TriangleAlert,
+  CircleX,
 } from "lucide-react";
 
 type LucideReactIconProps = {
@@ -37,3 +41,7 @@ export const IconUsers = withLucideReactIcon(Users);
 export const IconAtSign = withLucideReactIcon(AtSign);
 export const IconLogOut = withLucideReactIcon(LogOut);
 export const IconTrash = withLucideReactIcon(Trash2);
+export const IconCheck = withLucideReactIcon(Check);
+export const IconInfo = withLucideReactIcon(Info);
+export const IconWarn = withLucideReactIcon(TriangleAlert);
+export const IconAlert = withLucideReactIcon(CircleX);

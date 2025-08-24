@@ -9,7 +9,7 @@ export const AccountSettings = (props: Props) => {
       <div className={clsx("flex flex-row items-center justify-between")}>
         <div className={clsx("flex flex-col justify-start")}>
           <div className={clsx("text-xl font-semibold")}>Account settings</div>
-          <div className={clsx("text-md text-gray-500")}>
+          <div className={clsx("text-md text-text-description")}>
             Configure credentials, secrets, and more in account settings.
           </div>
         </div>

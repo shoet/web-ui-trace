@@ -2,6 +2,7 @@
 
 @theme {
   --color-border: var(--color-gray-600);
+  --color-text-description: var(--color-gray-400);
 }
 
 :root {

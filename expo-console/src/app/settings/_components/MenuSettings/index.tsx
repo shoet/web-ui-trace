@@ -13,6 +13,13 @@ import clsx from "clsx";
 import Link from "next/link";
 import { PropsWithChildren, ReactNode } from "react";
 
+type MenuItemLinkInPage = {
+  type: "link_in_page";
+  name: string;
+  text: string;
+  icon?: ReactNode;
+};
+
 type MenuItemLink = {
   type: "link";
   href: string;
@@ -25,7 +32,7 @@ type MenuItemComponent = {
   component: ReactNode;
 };
 
-type MenuItem = MenuItemLink | MenuItemComponent;
+type MenuItem = MenuItemLinkInPage | MenuItemLink | MenuItemComponent;
 
 type Props = {
   items: MenuItem[];
@@ -42,7 +49,7 @@ const MenuItemRowLink = (props: { item: MenuItemLink }) => {
     <MenuItemRow>
       <div className={clsx("flex flex-row items-center justify-start gap-2")}>
         {item.icon && item.icon}
-        <Link href={item.href} className="text-sm">
+        <Link href={item.href} className="text-sm w-full">
           {item.text}
         </Link>
       </div>
@@ -75,55 +82,55 @@ export const MenuSettings = () => {
     {
       type: "link",
       text: "About you",
-      href: "",
+      href: "#about-you",
       icon: <IconUser size={20} color={"var(--color-gray-400)"} />,
     },
     {
       type: "link",
       text: "Email",
-      href: "",
+      href: "#email",
       icon: <IconMail size={20} color={"var(--color-gray-400)"} />,
     },
     {
       type: "link",
       text: "Change password",
-      href: "",
+      href: "#change-password",
       icon: <IconLock size={20} color={"var(--color-gray-400)"} />,
     },
     {
       type: "link",
       text: "Two-factor authentication",
-      href: "",
+      href: "#two-factor-authentication",
       icon: <IconSecurity size={20} color={"var(--color-gray-400)"} />,
     },
     {
       type: "link",
       text: "Connections",
-      href: "",
+      href: "#connections",
       icon: <IconConnect size={20} color={"var(--color-gray-400)"} />,
     },
     {
       type: "link",
       text: "Security acitivity",
-      href: "",
+      href: "#security-activiety",
       icon: <IconSecurity size={20} color={"var(--color-gray-400)"} />,
     },
     {
       type: "link",
       text: "Convert to organization",
-      href: "",
+      href: "#convert-to-organization",
       icon: <IconUsers size={20} color={"var(--color-gray-400)"} />,
     },
     {
       type: "link",
       text: "Rename account",
-      href: "",
+      href: "#rename-account",
       icon: <IconAtSign size={20} color={"var(--color-gray-400)"} />,
     },
     {
       type: "link",
-      text: "Log out of sessiont",
-      href: "",
+      text: "Log out of session",
+      href: "#log-out-of-session",
       icon: <IconLogOut size={20} color={"var(--color-gray-400)"} />,
     },
   ];

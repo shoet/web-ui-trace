@@ -1,6 +1,7 @@
 import clsx from "clsx";
 import { ComponentWithBorder } from "../ComponentWithBorder";
 import { PrimaryButton } from "../PrimaryButton";
+import { IconArrowRight } from "@/components/Icon";
 
 type Props = {};
 export const AccountSettings = (props: Props) => {
@@ -14,7 +15,10 @@ export const AccountSettings = (props: Props) => {
           </div>
         </div>
         <div>
-          <PrimaryButton text="Account Settings" />
+          <PrimaryButton
+            text="Account Settings"
+            icon={<IconArrowRight size={14} />}
+          />
         </div>
       </div>
     </ComponentWithBorder>

@@ -1,6 +1,5 @@
 import clsx from "clsx";
 import { ComponentWithBorder } from "../ComponentWithBorder";
-import { IconUser } from "@/components/Icon";
 import { PrimaryButton } from "../PrimaryButton";
 import { TextInput } from "../TextInput";
 import { SectionTitleAboutYou } from "../SectionTitle";
@@ -15,7 +14,7 @@ const Footer = () => {
 
 export const AboutYou = () => {
   return (
-    <ComponentWithBorder footerComponent={<Footer />}>
+    <ComponentWithBorder id="about-you" footerComponent={<Footer />}>
       <div className={clsx("flex flex-col gap-2")}>
         <SectionTitleAboutYou />
         <div className={clsx("flex flex-row items-center gap-2")}>

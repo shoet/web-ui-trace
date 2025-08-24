@@ -51,7 +51,7 @@ export const ChangePassword = () => {
   }, [password]);
 
   return (
-    <ComponentWithBorder footerComponent={<Footer />}>
+    <ComponentWithBorder id="change-password" footerComponent={<Footer />}>
       <div className={clsx("flex flex-col justify-start gap-2")}>
         <SectionTitleChangePassword />
         <div className={clsx("flex flex-col gap-2 justify-start")}>

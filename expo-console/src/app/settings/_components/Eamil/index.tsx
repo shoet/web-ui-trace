@@ -16,7 +16,7 @@ const Footer = () => {
 
 export const Email = () => {
   return (
-    <ComponentWithBorder footerComponent={<Footer />}>
+    <ComponentWithBorder id="email" footerComponent={<Footer />}>
       <div className={clsx("flex flex-col justify-start gap-2")}>
         <SectionTitleEmail />
         <div className={clsx("text-sm text-text-description")}>

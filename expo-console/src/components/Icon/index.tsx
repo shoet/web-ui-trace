@@ -29,8 +29,6 @@ import {
   faGithub,
   IconDefinition as FontAwesomeIconType,
 } from "@fortawesome/free-brands-svg-icons";
-import { CSSProperties } from "react";
-import { CssVariable } from "next/dist/compiled/@next/font";
 
 type LucideReactIconProps = {
   size?: number;

@@ -1,8 +1,7 @@
-import { IconCheck, IconMail } from "@/components/Icon";
 import clsx from "clsx";
-import { TextInput } from "../TextInput";
+import { TextInput } from "@/components/TextInput";
 import { ComponentWithBorder } from "../ComponentWithBorder";
-import { PrimaryButton } from "../PrimaryButton";
+import { PrimaryButton } from "@/components/Button";
 import { SectionTitleEmail } from "../SectionTitle";
 import { Badge } from "../Badge";
 

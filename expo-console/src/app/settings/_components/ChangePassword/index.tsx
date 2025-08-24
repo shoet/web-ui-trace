@@ -2,10 +2,10 @@
 import clsx from "clsx";
 import { SectionTitleChangePassword } from "../SectionTitle";
 import { ComponentWithBorder } from "../ComponentWithBorder";
-import { TextInput } from "../TextInput";
+import { TextInput } from "@/components/TextInput";
 import { useEffect, useState } from "react";
 import { PasswordStrength } from "../PasswordStrength";
-import { PrimaryButton } from "../PrimaryButton";
+import { PrimaryButton } from "@/components/Button";
 
 const Footer = () => {
   return (

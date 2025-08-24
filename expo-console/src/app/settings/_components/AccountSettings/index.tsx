@@ -1,6 +1,6 @@
 import clsx from "clsx";
 import { ComponentWithBorder } from "../ComponentWithBorder";
-import { PrimaryButton } from "../PrimaryButton";
+import { PrimaryButton } from "@/components/Button";
 import { IconArrowRight } from "@/components/Icon";
 
 type Props = {};

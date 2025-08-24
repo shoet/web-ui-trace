@@ -1,11 +1,17 @@
 import clsx from "clsx";
 import { SectionTitleConnection } from "../SectionTitle";
 import { IconArrowUpRight, IconDiscord, IconGitHub } from "@/components/Icon";
-import { DangerButton, PrimaryButton, SecondaryButton } from "../PrimaryButton";
+import {
+  DangerButton,
+  PrimaryButton,
+  SecondaryButton,
+} from "@/components/Button";
+import { ComponentProps } from "react";
 
-export const Connections = () => {
+export const Connections = (props: ComponentProps<"div">) => {
+  const { ...rest } = props;
   return (
-    <div id="connections" className={clsx("border border-gray-500 rounded-xl")}>
+    <div className={clsx("border border-gray-500 rounded-xl")} {...rest}>
       <div className={clsx("flex flex-col justify-start")}>
         <div className={clsx("border-b border-b-gray-500 p-5")}>
           <SectionTitleConnection />

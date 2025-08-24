@@ -1,7 +1,7 @@
 import clsx from "clsx";
 import { ComponentWithBorder } from "../ComponentWithBorder";
-import { PrimaryButton } from "../PrimaryButton";
-import { TextInput } from "../TextInput";
+import { PrimaryButton } from "@/components/Button";
+import { TextInput } from "@/components/TextInput";
 import { SectionTitleAboutYou } from "../SectionTitle";
 
 const Footer = () => {

@@ -9,14 +9,14 @@ import { Connections } from "./_components/Connections";
 export default function SettingPage() {
   return (
     <div className={clsx("flex flex-col gap-3 p-6")}>
-      <div className={clsx("flex flex-col gap-10")}>
+      <div className={clsx("flex flex-col gap-10 max-w-[1200px] mx-auto")}>
         <div className="text-2xl font-bold">User settings</div>
         <AccountSettings />
         <AboutYou />
         <Email />
         <ChangePassword />
         <EnableTwoFactorAuthentication />
-        <Connections />
+        <Connections id="connections" />
         <div>Security activity</div>
         <div>Convert your account into an organization</div>
         <div>Rename account</div>

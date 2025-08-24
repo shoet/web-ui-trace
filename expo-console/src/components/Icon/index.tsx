@@ -16,6 +16,8 @@ import {
   Info,
   TriangleAlert,
   CircleX,
+  Eye,
+  EyeOff,
 } from "lucide-react";
 
 type LucideReactIconProps = {
@@ -45,3 +47,5 @@ export const IconCheck = withLucideReactIcon(Check);
 export const IconInfo = withLucideReactIcon(Info);
 export const IconWarn = withLucideReactIcon(TriangleAlert);
 export const IconAlert = withLucideReactIcon(CircleX);
+export const IconEye = withLucideReactIcon(Eye);
+export const IconEyeOff = withLucideReactIcon(EyeOff);

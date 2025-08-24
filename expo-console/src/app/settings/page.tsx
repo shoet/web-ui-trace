@@ -2,6 +2,7 @@ import clsx from "clsx";
 import { AccountSettings } from "./_components/AccountSettings";
 import { AboutYou } from "./_components/AboutYou";
 import { Email } from "./_components/Eamil";
+import { ChangePassword } from "./_components/ChangePassword";
 
 export default function SettingPage() {
   return (
@@ -11,6 +12,7 @@ export default function SettingPage() {
         <AccountSettings />
         <AboutYou />
         <Email />
+        <ChangePassword />
         <div> Change Password </div>
         <div>Enable two-factor authentication</div>
         <div>Connections</div>

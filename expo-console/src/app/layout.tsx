@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import clsx from "clsx";
 import { MenuSettings } from "./settings/_components/MenuSettings";
+import { IntersectionObserverContextProvider } from "@/components/IntersectionObserverContext";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -29,20 +30,22 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <div className={clsx("flex flex-row items-start justify-between")}>
-          <div
-            className={clsx(
-              "flex flex-col justify-start max-w-[300px] min-w-[200px] border-r border-r-gray-500 h-dvh",
-              "sticky top-0",
-            )}
-          >
-            <MenuSettings />
+        <IntersectionObserverContextProvider>
+          <div className={clsx("flex flex-row items-start justify-between")}>
+            <div
+              className={clsx(
+                "flex flex-col justify-start max-w-[300px] min-w-[200px] border-r border-r-gray-500 h-dvh",
+                "sticky top-0",
+              )}
+            >
+              <MenuSettings />
+            </div>
+            <div className={clsx("flex-1")}>{children}</div>
           </div>
-          <div className={clsx("flex-1")}>{children}</div>
-        </div>
-        <div className={clsx("border-t border-t-gray-500 p-5 h-[500px]")}>
-          footer
-        </div>
+          <div className={clsx("border-t border-t-gray-500 p-5 h-[500px]")}>
+            footer
+          </div>
+        </IntersectionObserverContextProvider>
       </body>
     </html>
   );

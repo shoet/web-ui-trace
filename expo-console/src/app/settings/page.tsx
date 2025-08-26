@@ -8,8 +8,16 @@ import { Connections } from "./_components/Connections";
 import { IntersectionObserverContainer } from "@/components/IntersectionObserverContext";
 
 export default function SettingPage() {
+  const ids = [
+    "about-you",
+    "email",
+    "change-password",
+    "two-factor-authentication",
+    "connections",
+  ];
+
   return (
-    <IntersectionObserverContainer>
+    <IntersectionObserverContainer ids={ids}>
       <div className={clsx("flex flex-col gap-3 p-6")}>
         <div className={clsx("flex flex-col gap-10 max-w-[1200px] mx-auto")}>
           <div className="text-2xl font-bold">User settings</div>

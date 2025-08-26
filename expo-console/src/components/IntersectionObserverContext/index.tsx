@@ -1,24 +1,64 @@
 "use client";
-import { PropsWithChildren, useEffect, useState } from "react";
+import {
+  createContext,
+  PropsWithChildren,
+  useCallback,
+  useContext,
+  useEffect,
+  useRef,
+  useState,
+} from "react";
 
-export const IntersectionObserverContainer = (props: PropsWithChildren) => {
-  const { children, ...rest } = props;
+type IntersectionObserverContextType = {
+  registerIds: (ids: string[]) => void;
+};
+const IntersectionObserverContext =
+  createContext<IntersectionObserverContextType>({
+    registerIds: () => {},
+  });
 
-  const ids = [
-    "about-you",
-    "email",
-    "change-password",
-    "two-factor-authentication",
-    "connections",
-  ];
+export const useIntersectionObserver = () =>
+  useContext(IntersectionObserverContext);
 
-  type Intersections = Record<string, DOMRectReadOnly | undefined>;
+export const IntersectionObserverContextProvider = (
+  props: PropsWithChildren,
+) => {
+  const { children } = props;
+  const [observerIds, setObserverIds] = useState<string[]>([]);
 
-  const [intersections, setIntersections] = useState(
-    ids.reduce<Intersections>((all, current) => {
-      return { ...all, [current]: undefined };
-    }, {}),
-  );
+  const registerIds = (ids: string[]) => {
+    setObserverIds(ids);
+  };
+
+  const [intersections, setIntersections] = useState<Intersections>({});
+  const observersRef = useRef<Record<string, IntersectionObserver>>({});
+
+  const cleanupObservers = () => {
+    if (observersRef.current) {
+      Object.values(observersRef.current).forEach((o) => o.disconnect());
+    }
+  };
+
+  useEffect(() => {
+    cleanupObservers();
+
+    observerIds.forEach((i) => {
+      const observer = createObserver(i);
+      if (observer) {
+        observersRef.current[i] = observer;
+      }
+    });
+
+    setIntersections(
+      observerIds.reduce<Intersections>((all, current) => {
+        return { ...all, [current]: undefined };
+      }, {}),
+    );
+
+    return () => {
+      cleanupObservers();
+    };
+  }, [observerIds]);
 
   const updateIntersections = (
     id: string,
@@ -27,53 +67,43 @@ export const IntersectionObserverContainer = (props: PropsWithChildren) => {
     setIntersections((prev) => ({ ...prev, [id]: dom }));
   };
 
-  const isDefinedIntersection = (
-    entry: [string, DOMRectReadOnly | undefined],
-  ): entry is [string, DOMRectReadOnly] => {
-    return entry[1] !== undefined;
-  };
+  const createObserver = useCallback(
+    (id: string) => {
+      let element = document.getElementById(id);
+      if (!element) {
+        return;
+      }
+      //   entry.target, // 対象要素
+      //   entry.boundingClientRect, // 対象要素の外接矩形
+      //   entry.intersectionRect, // 表示領域の矩形。画面から見切れていたら表示されている分の高さで反映される。
+      //   entry.intersectionRatio, // intersectionRatio と boundingClientRect の比率。何%表示されているかを判別できる
+      //   entry.isIntersecting, // 交差交差常態か。rootがnullで領域がビューポートの場合、その中に入っているか。
+      //   entry.time, // 交差されたタイミング
+      //   entry.rootBounds, // 交差しているルート矩形。rootがnullだったらビューポートの領域になる
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              updateIntersections(entry.target.id, entry.intersectionRect);
+            } else {
+              updateIntersections(entry.target.id, undefined);
+            }
+          });
+        },
+        {
+          root: null,
+          threshold: 0,
+        },
+      );
+      observer.observe(element);
+      return observer;
+    },
+    [updateIntersections],
+  );
 
-  const getTopIntersection = (
-    intersections: Intersections,
-  ): [string, DOMRectReadOnly] | undefined => {
-    const entries = Object.entries(intersections)
-      .filter(isDefinedIntersection)
-      .sort(([, a], [, b]) => a.top - b.top);
-    return entries[0];
-  };
-
-  let observers: Record<string, IntersectionObserver> = {};
-  const registerObserver = (id: string) => {
-    let element = document.getElementById(id);
-    if (!element) {
-      return;
-    }
-    let observerOptions = {
-      root: null,
-      threshold: 0,
-    };
-    //   entry.target, // 対象要素
-    //   entry.boundingClientRect, // 対象要素の外接矩形
-    //   entry.intersectionRect, // 表示領域の矩形。画面から見切れていたら表示されている分の高さで反映される。
-    //   entry.intersectionRatio, // intersectionRatio と boundingClientRect の比率。何%表示されているかを判別できる
-    //   entry.isIntersecting, // 交差交差常態か。rootがnullで領域がビューポートの場合、その中に入っているか。
-    //   entry.time, // 交差されたタイミング
-    //   entry.rootBounds, // 交差しているルート矩形。rootがnullだったらビューポートの領域になる
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          updateIntersections(entry.target.id, entry.intersectionRect);
-        } else {
-          updateIntersections(entry.target.id, undefined);
-        }
-      });
-    }, observerOptions);
-    observer.observe(element);
-    observers[id] = observer;
-  };
-
+  // 交差状態に変化があったら発火する
   useEffect(() => {
-    ids.forEach((id) => {
+    observerIds.forEach((id) => {
       const element = document.getElementById(id);
       if (element) {
         element.style.backgroundColor = "";
@@ -88,15 +118,43 @@ export const IntersectionObserverContainer = (props: PropsWithChildren) => {
     }
   }, [intersections]);
 
+  return (
+    <IntersectionObserverContext
+      value={{
+        registerIds,
+      }}
+    >
+      {children}
+    </IntersectionObserverContext>
+  );
+};
+
+type Intersections = Record<string, DOMRectReadOnly | undefined>;
+
+const isDefinedIntersection = (
+  entry: [string, DOMRectReadOnly | undefined],
+): entry is [string, DOMRectReadOnly] => {
+  return entry[1] !== undefined;
+};
+
+const getTopIntersection = (
+  intersections: Intersections,
+): [string, DOMRectReadOnly] | undefined => {
+  const entries = Object.entries(intersections)
+    .filter(isDefinedIntersection)
+    .sort(([, a], [, b]) => a.top - b.top);
+  return entries[0];
+};
+
+export const IntersectionObserverContainer = (
+  props: { ids: string[] } & PropsWithChildren,
+) => {
+  const { ids, children } = props;
+
+  const { registerIds } = useIntersectionObserver();
   useEffect(() => {
-    ids.forEach((i) => registerObserver(i));
+    registerIds(ids);
+  }, [ids]);
 
-    return () => {
-      Object.values(observers).forEach((o) => {
-        o.disconnect();
-      });
-    };
-  }, []);
-
-  return <div {...rest}>{children}</div>;
+  return <>{children}</>;
 };

@@ -9,6 +9,7 @@ import { IntersectionObserverContainer } from "@/components/IntersectionObserver
 import { SecurityActivity } from "./_components/SecurityActivity";
 import { ConvertYourAccountIntoAnOrganization } from "./_components/ConvertYourAccoutIntoAnOrganization";
 import { RenameAccount } from "./_components/RenameAccount";
+import { LogOutOfOtherSessions } from "./_components/LogOutOtherSessions";
 
 export default function SettingPage() {
   const ids = [
@@ -20,6 +21,7 @@ export default function SettingPage() {
     "security-activity",
     "convert-to-organization",
     "rename-account",
+    "log-out-of-session",
   ];
 
   return (
@@ -36,13 +38,13 @@ export default function SettingPage() {
           <SecurityActivity id="security-activity" />
           <ConvertYourAccountIntoAnOrganization id="convert-to-organization" />
           <RenameAccount id="rename-account" />
-          <div>Log out of other sessions</div>
-          <div className={clsx("h-[500px] w-full")}>space</div>
+          <LogOutOfOtherSessions id="log-out-of-session" />
         </div>
         <div>
           <div>Danger zon</div>
           <div>Delete your account</div>
         </div>
+        <div className={clsx("h-[500px] w-full")}>space</div>
       </div>
     </IntersectionObserverContainer>
   );

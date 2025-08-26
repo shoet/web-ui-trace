@@ -3,6 +3,7 @@ import {
   IconConnect,
   IconIdCard,
   IconLock,
+  IconLogOut,
   IconMail,
   IconSecurity,
   IconUser,
@@ -83,5 +84,12 @@ export const SectionTitleRenameAccount = () => (
   <SectionTitle
     title="Rename account"
     icon={<IconAtSign color={"var(--color-gray-400)"} size={20} />}
+  />
+);
+
+export const SectionTitleLogOut = () => (
+  <SectionTitle
+    title="Log out of other sessions"
+    icon={<IconLogOut color={"var(--color-gray-400)"} size={20} />}
   />
 );

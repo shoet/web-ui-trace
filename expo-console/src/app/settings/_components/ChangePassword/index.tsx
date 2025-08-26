@@ -3,7 +3,7 @@ import clsx from "clsx";
 import { SectionTitleChangePassword } from "../SectionTitle";
 import { ComponentWithBorder } from "../ComponentWithBorder";
 import { TextInput } from "@/components/TextInput";
-import { useEffect, useState } from "react";
+import { ComponentProps, useEffect, useState } from "react";
 import { PasswordStrength } from "../PasswordStrength";
 import { PrimaryButton } from "@/components/Button";
 
@@ -15,7 +15,8 @@ const Footer = () => {
   );
 };
 
-export const ChangePassword = () => {
+export const ChangePassword = (props: ComponentProps<"div">) => {
+  const { ...rest } = props;
   const [password, setPassword] = useState<string>();
 
   const alertMatch = /^(?=.*?[a-z])(?=.*?[A-Z])/;
@@ -51,7 +52,7 @@ export const ChangePassword = () => {
   }, [password]);
 
   return (
-    <ComponentWithBorder id="change-password" footerComponent={<Footer />}>
+    <ComponentWithBorder footerComponent={<Footer />} {...rest}>
       <div className={clsx("flex flex-col justify-start gap-2")}>
         <SectionTitleChangePassword />
         <div className={clsx("flex flex-col gap-2 justify-start")}>

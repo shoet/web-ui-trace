@@ -66,11 +66,11 @@ const Menu = (props: Props) => {
   const { items } = props;
   return (
     <div className={clsx("flex flex-col justify-start")}>
-      {items.map((item) =>
+      {items.map((item, idx) =>
         item.type === "link" ? (
-          <MenuItemRowLink item={item} />
+          <MenuItemRowLink item={item} key={idx} />
         ) : item.type === "component" ? (
-          <MenuItemRowComponent item={item} />
+          <MenuItemRowComponent item={item} key={idx} />
         ) : null,
       )}
     </div>

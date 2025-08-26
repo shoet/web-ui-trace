@@ -6,9 +6,12 @@ type Props = {
 } & ComponentProps<"div">;
 
 export const ComponentWithBorder = (props: Props) => {
-  const { footerComponent, children, ...rest } = props;
+  const { footerComponent, className, children, ...rest } = props;
   return (
-    <div className={clsx("border border-border rounded-xl")} {...rest}>
+    <div
+      className={clsx("border border-border rounded-xl", className)}
+      {...rest}
+    >
       <div className={clsx("p-5")}>{children}</div>
       {footerComponent && (
         <div className={clsx("w-full p-3 bg-gray-800 rounded-b-xl")}>

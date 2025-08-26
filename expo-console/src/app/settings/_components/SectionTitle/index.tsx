@@ -6,6 +6,7 @@ import {
   IconLogOut,
   IconMail,
   IconSecurity,
+  IconTrash,
   IconUser,
   IconUsers,
 } from "@/components/Icon";
@@ -91,5 +92,12 @@ export const SectionTitleLogOut = () => (
   <SectionTitle
     title="Log out of other sessions"
     icon={<IconLogOut color={"var(--color-gray-400)"} size={20} />}
+  />
+);
+
+export const SectionTitleDeleteYourAccount = () => (
+  <SectionTitle
+    title="Delete your account"
+    icon={<IconTrash color={"var(--color-gray-400)"} size={20} />}
   />
 );

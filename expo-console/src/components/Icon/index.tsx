@@ -69,3 +69,4 @@ export const IconEyeOff = withLucideReactIcon(EyeOff);
 export const IconArrowUpRight = withLucideReactIcon(MoveUpRight);
 export const IconDiscord = withFontAwesomeIcon(faDiscord);
 export const IconGitHub = withFontAwesomeIcon(faGithub);
+export const IconDanger = withLucideReactIcon(TriangleAlert);

@@ -86,7 +86,7 @@ export const MenuSettings = () => {
       type: "link",
       id: "delete-account",
       text: "Delete account",
-      href: "",
+      href: "#delete-account",
       icon: <IconTrash size={20} color={"var(--color-gray-400)"} />,
     },
   ];

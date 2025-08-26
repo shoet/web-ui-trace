@@ -6,6 +6,7 @@ import { ChangePassword } from "./_components/ChangePassword";
 import { EnableTwoFactorAuthentication } from "./_components/EnableTwoFactorAuthentication";
 import { Connections } from "./_components/Connections";
 import { IntersectionObserverContainer } from "@/components/IntersectionObserverContext";
+import { SecurityActivity } from "./_components/SecurityActivity";
 
 export default function SettingPage() {
   const ids = [
@@ -14,6 +15,7 @@ export default function SettingPage() {
     "change-password",
     "two-factor-authentication",
     "connections",
+    "security-activity",
   ];
 
   return (
@@ -27,7 +29,7 @@ export default function SettingPage() {
           <ChangePassword id="change-password" />
           <EnableTwoFactorAuthentication id="two-factor-authentication" />
           <Connections id="connections" />
-          <div>Security activity</div>
+          <SecurityActivity id="security-activity" />
           <div>Convert your account into an organization</div>
           <div>Rename account</div>
           <div>Log out of other sessions</div>

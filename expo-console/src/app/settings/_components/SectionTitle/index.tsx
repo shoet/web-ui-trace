@@ -3,6 +3,7 @@ import {
   IconIdCard,
   IconLock,
   IconMail,
+  IconSecurity,
   IconUser,
 } from "@/components/Icon";
 import clsx from "clsx";
@@ -59,5 +60,12 @@ export const SectionTitleConnection = () => (
   <SectionTitle
     title="Connections"
     icon={<IconConnect color={"var(--color-gray-400)"} size={20} />}
+  />
+);
+
+export const SectionTitleSecurityActivity = () => (
+  <SectionTitle
+    title="Security activity"
+    icon={<IconSecurity color={"var(--color-gray-400)"} size={20} />}
   />
 );

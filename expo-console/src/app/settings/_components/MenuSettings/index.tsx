@@ -53,9 +53,9 @@ export const MenuSettings = () => {
     },
     {
       type: "link",
-      id: "security-activiety",
+      id: "security-activity",
       text: "Security acitivity",
-      href: "#security-activiety",
+      href: "#security-activity",
       icon: <IconSecurity size={20} color={"var(--color-gray-400)"} />,
     },
     {

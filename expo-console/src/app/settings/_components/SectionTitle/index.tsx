@@ -1,4 +1,5 @@
 import {
+  IconAtSign,
   IconConnect,
   IconIdCard,
   IconLock,
@@ -75,5 +76,12 @@ export const SectionTitleConvertYourAccountIntoAnOrganization = () => (
   <SectionTitle
     title="Convert your account into an organization"
     icon={<IconUsers color={"var(--color-gray-400)"} size={20} />}
+  />
+);
+
+export const SectionTitleRenameAccount = () => (
+  <SectionTitle
+    title="Rename account"
+    icon={<IconAtSign color={"var(--color-gray-400)"} size={20} />}
   />
 );

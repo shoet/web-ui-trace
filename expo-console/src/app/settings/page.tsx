@@ -8,6 +8,7 @@ import { Connections } from "./_components/Connections";
 import { IntersectionObserverContainer } from "@/components/IntersectionObserverContext";
 import { SecurityActivity } from "./_components/SecurityActivity";
 import { ConvertYourAccountIntoAnOrganization } from "./_components/ConvertYourAccoutIntoAnOrganization";
+import { RenameAccount } from "./_components/RenameAccount";
 
 export default function SettingPage() {
   const ids = [
@@ -18,6 +19,7 @@ export default function SettingPage() {
     "connections",
     "security-activity",
     "convert-to-organization",
+    "rename-account",
   ];
 
   return (
@@ -33,7 +35,7 @@ export default function SettingPage() {
           <Connections id="connections" />
           <SecurityActivity id="security-activity" />
           <ConvertYourAccountIntoAnOrganization id="convert-to-organization" />
-          <div>Rename account</div>
+          <RenameAccount id="rename-account" />
           <div>Log out of other sessions</div>
           <div className={clsx("h-[500px] w-full")}>space</div>
         </div>

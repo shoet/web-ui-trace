@@ -34,7 +34,7 @@ export default function RootLayout({
           <div className={clsx("flex flex-row items-start justify-between")}>
             <div
               className={clsx(
-                "flex flex-col justify-start max-w-[300px] min-w-[200px] border-r border-r-gray-500 h-dvh",
+                "flex flex-col justify-start max-w-[300px] min-w-[200px] border-r border-r-border h-dvh",
                 "sticky top-0",
               )}
             >
@@ -42,7 +42,7 @@ export default function RootLayout({
             </div>
             <div className={clsx("flex-1")}>{children}</div>
           </div>
-          <div className={clsx("border-t border-t-gray-500 p-5 h-[500px]")}>
+          <div className={clsx("border-t border-t-border p-5 h-[500px]")}>
             footer
           </div>
         </IntersectionObserverContextProvider>

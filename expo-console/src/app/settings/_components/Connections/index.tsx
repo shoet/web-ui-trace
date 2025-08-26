@@ -11,9 +11,9 @@ import { ComponentProps } from "react";
 export const Connections = (props: ComponentProps<"div">) => {
   const { ...rest } = props;
   return (
-    <div className={clsx("border border-gray-500 rounded-xl")} {...rest}>
+    <div className={clsx("border border-border rounded-xl")} {...rest}>
       <div className={clsx("flex flex-col justify-start")}>
-        <div className={clsx("border-b border-b-gray-500 p-5")}>
+        <div className={clsx("border-b border-b-border p-5")}>
           <SectionTitleConnection />
           <div className={clsx("text-text-description")}>
             Link your account with third party services.
@@ -21,7 +21,7 @@ export const Connections = (props: ComponentProps<"div">) => {
         </div>
         <div
           className={clsx(
-            "border-b border-b-gray-500 p-5",
+            "border-b border-b-border p-5",
             "flex flex-row items-center justify-between",
           )}
         >

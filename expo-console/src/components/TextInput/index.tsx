@@ -20,7 +20,7 @@ export const TextInput = (props: Props) => {
     <div
       className={clsx(
         "p-2 flex flex-row items-center justify-between w-full",
-        "border border-gray-500 rounded-md ",
+        "border border-border rounded-md ",
         isFocus && "outline-solid outline-3 outline-blue-300",
       )}
     >

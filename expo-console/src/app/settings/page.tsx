@@ -31,6 +31,7 @@ export default function SettingPage() {
           <div>Convert your account into an organization</div>
           <div>Rename account</div>
           <div>Log out of other sessions</div>
+          <div className={clsx("h-[500px] w-full")}>space</div>
         </div>
         <div>
           <div>Danger zon</div>

@@ -11,6 +11,7 @@ import {
 
 type IntersectionObserverContextType = {
   registerIds: (ids: string[]) => void;
+  activeElementId?: string;
 };
 const IntersectionObserverContext =
   createContext<IntersectionObserverContextType>({
@@ -25,6 +26,7 @@ export const IntersectionObserverContextProvider = (
 ) => {
   const { children } = props;
   const [observerIds, setObserverIds] = useState<string[]>([]);
+  const [activeElementId, setActiveElementId] = useState<string>();
 
   const registerIds = (ids: string[]) => {
     setObserverIds(ids);
@@ -113,7 +115,7 @@ export const IntersectionObserverContextProvider = (
     if (top) {
       const d = document.getElementById(top[0]);
       if (d) {
-        d.style.backgroundColor = "red";
+        setActiveElementId(d.id);
       }
     }
   }, [intersections]);
@@ -122,6 +124,7 @@ export const IntersectionObserverContextProvider = (
     <IntersectionObserverContext
       value={{
         registerIds,
+        activeElementId,
       }}
     >
       {children}

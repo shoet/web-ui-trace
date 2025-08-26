@@ -5,6 +5,7 @@ import {
   IconMail,
   IconSecurity,
   IconUser,
+  IconUsers,
 } from "@/components/Icon";
 import clsx from "clsx";
 import { ReactNode } from "react";
@@ -67,5 +68,12 @@ export const SectionTitleSecurityActivity = () => (
   <SectionTitle
     title="Security activity"
     icon={<IconSecurity color={"var(--color-gray-400)"} size={20} />}
+  />
+);
+
+export const SectionTitleConvertYourAccountIntoAnOrganization = () => (
+  <SectionTitle
+    title="Convert your account into an organization"
+    icon={<IconUsers color={"var(--color-gray-400)"} size={20} />}
   />
 );

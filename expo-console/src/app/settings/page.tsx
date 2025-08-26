@@ -7,6 +7,7 @@ import { EnableTwoFactorAuthentication } from "./_components/EnableTwoFactorAuth
 import { Connections } from "./_components/Connections";
 import { IntersectionObserverContainer } from "@/components/IntersectionObserverContext";
 import { SecurityActivity } from "./_components/SecurityActivity";
+import { ConvertYourAccountIntoAnOrganization } from "./_components/ConvertYourAccoutIntoAnOrganization";
 
 export default function SettingPage() {
   const ids = [
@@ -16,6 +17,7 @@ export default function SettingPage() {
     "two-factor-authentication",
     "connections",
     "security-activity",
+    "convert-to-organization",
   ];
 
   return (
@@ -30,7 +32,7 @@ export default function SettingPage() {
           <EnableTwoFactorAuthentication id="two-factor-authentication" />
           <Connections id="connections" />
           <SecurityActivity id="security-activity" />
-          <div>Convert your account into an organization</div>
+          <ConvertYourAccountIntoAnOrganization id="convert-to-organization" />
           <div>Rename account</div>
           <div>Log out of other sessions</div>
           <div className={clsx("h-[500px] w-full")}>space</div>

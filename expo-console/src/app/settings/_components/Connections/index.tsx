@@ -1,11 +1,7 @@
 import clsx from "clsx";
 import { SectionTitleConnection } from "../SectionTitle";
 import { IconArrowUpRight, IconDiscord, IconGitHub } from "@/components/Icon";
-import {
-  DangerButton,
-  PrimaryButton,
-  SecondaryButton,
-} from "@/components/Button";
+import { DangerButton, SecondaryButton } from "@/components/Button";
 import { ComponentProps } from "react";
 
 export const Connections = (props: ComponentProps<"div">) => {

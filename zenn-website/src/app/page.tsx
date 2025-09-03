@@ -1,10 +1,11 @@
 import clsx from "clsx";
 import { ArticleHeader } from "./_components/ArticleHeader";
 import { Profile } from "./_components/Profile";
+import { Article } from "./_components/Article";
 
 export default function Home() {
   return (
-    <div className={clsx("bg-base-outer")}>
+    <div className={clsx("bg-base-outer pb-[4rem]")}>
       <ArticleHeader />
       <div className={clsx("max-w-[1200px] mx-auto px-[40px]")}>
         <div
@@ -13,7 +14,9 @@ export default function Home() {
           )}
         >
           <section className={clsx("flex-1")}>
-            <div className={clsx("bg-base p-[40px] h-[600px]")}>article</div>
+            <div className={clsx("bg-base p-[40px]")}>
+              <Article />
+            </div>
           </section>
           <aside className={clsx("w-[300px]")}>
             <Profile />

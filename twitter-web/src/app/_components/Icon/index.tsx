@@ -12,6 +12,7 @@ import {
   User,
   CircleEllipsis,
   Ellipsis,
+  Check,
 } from "lucide-react";
 
 export const IconHome = (props: LucideProps) => <House {...props} />;
@@ -28,3 +29,4 @@ export const IconThunder = (props: LucideProps) => <Zap {...props} />;
 export const IconUser = (props: LucideProps) => <User {...props} />;
 export const IconMore = (props: LucideProps) => <CircleEllipsis {...props} />;
 export const IconEllipsis = (props: LucideProps) => <Ellipsis {...props} />;
+export const IconCheck = (props: LucideProps) => <Check {...props} />;

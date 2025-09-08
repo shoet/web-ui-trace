@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import clsx from "clsx";
 import { MenuLeft } from "./_components/MenuLeft";
+import { RightMenu } from "./_components/RightMenu";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -37,7 +38,9 @@ export default function RootLayout({
           <MenuLeft />
         </header>
         {children}
-        <div className={clsx("w-[400px]")}>right menu</div>
+        <div className={clsx("w-[400px]")}>
+          <RightMenu />
+        </div>
       </body>
     </html>
   );

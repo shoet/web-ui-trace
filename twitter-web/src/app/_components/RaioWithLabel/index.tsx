@@ -21,7 +21,7 @@ export const RadioWithLabel = (props: Props) => {
       />
       <div
         className={clsx(
-          "w-[24px] h-[24px] rounded-full flex items-center justify-center peer-focus:outline-2 peer-focus:outline-blue-300 outline-offset-6",
+          "w-[20px] h-[20px] rounded-full flex items-center justify-center peer-focus:outline-2 peer-focus:outline-blue-300 outline-offset-6",
           checked ? "bg-blue-500 text-white" : "border-2 border-gray-500",
         )}
       >

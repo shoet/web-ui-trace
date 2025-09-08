@@ -13,6 +13,11 @@ import {
   CircleEllipsis,
   Ellipsis,
   Check,
+  Image,
+  LayoutList,
+  Smile,
+  CalendarCheck,
+  Earth,
 } from "lucide-react";
 
 export const IconHome = (props: LucideProps) => <House {...props} />;
@@ -30,3 +35,10 @@ export const IconUser = (props: LucideProps) => <User {...props} />;
 export const IconMore = (props: LucideProps) => <CircleEllipsis {...props} />;
 export const IconEllipsis = (props: LucideProps) => <Ellipsis {...props} />;
 export const IconCheck = (props: LucideProps) => <Check {...props} />;
+export const IconImage = (props: LucideProps) => <Image {...props} />;
+export const IconTodo = (props: LucideProps) => <LayoutList {...props} />;
+export const IconSmile = (props: LucideProps) => <Smile {...props} />;
+export const IconCalendar = (props: LucideProps) => (
+  <CalendarCheck {...props} />
+);
+export const IconEarth = (props: LucideProps) => <Earth {...props} />;

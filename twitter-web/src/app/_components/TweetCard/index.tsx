@@ -13,6 +13,7 @@ type Tweet = {
   userId: string;
   repostByUserId?: string;
   images?: string[];
+  content: string;
 };
 
 async function getTweet(tweetId: string): Promise<Tweet> {
@@ -20,6 +21,7 @@ async function getTweet(tweetId: string): Promise<Tweet> {
     username: "username",
     userId: "userid",
     images: [],
+    content: tweetId,
   };
 }
 
@@ -46,7 +48,7 @@ export const LoadingTweetCard = () => {
 
 export const TweetCard = (props: { tweet: Tweet } & ComponentProps<"div">) => {
   const { tweet, className, ...rest } = props;
-  const { userId, username, images } = tweet;
+  const { userId, username, content, images } = tweet;
   return (
     <div
       className={clsx(
@@ -93,9 +95,7 @@ export const TweetCard = (props: { tweet: Tweet } & ComponentProps<"div">) => {
             ))}
           </div>
         )}
-        <div className={clsx("break-words")}>
-          tweettweettweettweettweettweettweettweettweettweettweettweettweettweettweettweettweettweettweettweettweettweettweettweettweettweettweettweettweettweettweettweettweettweettweettweet
-        </div>
+        <div className={clsx("break-words")}>{content}</div>
         <div
           className={clsx(
             "py-2",

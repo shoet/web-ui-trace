@@ -1,3 +1,4 @@
+"use client";
 import clsx from "clsx";
 import { Avatar } from "../Avatar";
 import {
@@ -41,17 +42,17 @@ export const PostForm = () => {
           )}
         >
           <div className={clsx("flex flex-start items-center gap-3")}>
-            <IconImage />
-            <IconGrok />
-            <IconTodo />
-            <IconTodo />
-            <IconSmile />
-            <IconCalendar />
+            <IconImage size={18} />
+            <IconGrok size={18} />
+            <IconTodo size={18} />
+            <IconTodo size={18} />
+            <IconSmile size={18} />
+            <IconCalendar size={18} />
           </div>
           <PrimaryButton
             disabled={!tweet}
             text="ポストする"
-            className="px-6 py-2.5 disabled:brightness-50"
+            className="text-md px-1.5 py-1.5 disabled:brightness-50"
           />
         </div>
       </div>

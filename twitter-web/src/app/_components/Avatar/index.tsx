@@ -13,7 +13,7 @@ export const Avatar = (props: Props) => {
     <div
       style={{ "--size": `${size}px` } as CSSProperties}
       className={clsx(
-        "relative w-[var(--size)] h-[var(--size)] rounded-full",
+        "relative w-[var(--size)] h-[var(--size)] rounded-full overflow-hidden",
         className,
       )}
       {...rest}
@@ -22,7 +22,7 @@ export const Avatar = (props: Props) => {
         src={imageSrc}
         alt="avatar"
         fill
-        className={clsx("object-contain object-center rounded-full")}
+        className={clsx("object-contain object-center")}
       />
     </div>
   );

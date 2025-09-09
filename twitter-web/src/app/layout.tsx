@@ -34,11 +34,11 @@ export default function RootLayout({
           "max-w-[1200px] mx-auto h-dvh",
         )}
       >
-        <header className={clsx("w-[300px] p-4 h-dvh")}>
+        <header className={clsx("w-[250px] p-4 h-dvh")}>
           <MenuLeft />
         </header>
-        {children}
-        <div className={clsx("w-[400px]")}>
+        <div className={clsx("w-[600px] min-w-0")}>{children}</div>
+        <div className={clsx("flex-1")}>
           <RightMenu />
         </div>
       </body>

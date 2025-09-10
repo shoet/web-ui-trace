@@ -25,11 +25,7 @@ export const ClientFeed = (props: Props) => {
         feedType={currentFeedType}
         onChangeTab={(feedType) => setCurrentFeedType(feedType)}
       />
-      <div
-        className={clsx(
-          "border-x border-x-gray-700 overflow-auto scrollbar-hidden",
-        )}
-      >
+      <div className={clsx("overflow-auto scrollbar-hidden")}>
         <PostForm />
         <div className={clsx("min-w-0 border-t border-t-gray-700")}>
           {currentFeedType === "recoomend"

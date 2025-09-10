@@ -18,7 +18,7 @@ export const PostForm = () => {
     <div
       className={clsx("flex flex-row items-start justify-between gap-2 p-4")}
     >
-      <Avatar imageSrc="/avatar_image.png" size={50} />
+      <Avatar imageSrc="/avatar_image.png" size={40} />
       <div className={clsx("flex flex-col gap-2 flex-1")}>
         <textarea
           value={tweet}
@@ -38,7 +38,7 @@ export const PostForm = () => {
         <div
           className={clsx(
             "border-t border-t-gray-700 mt-2 pt-3",
-            "flex flex-row items-center justify-between text-blue-500",
+            "flex flex-row items-center justify-between text-sky-500",
           )}
         >
           <div className={clsx("flex flex-start items-center gap-3")}>

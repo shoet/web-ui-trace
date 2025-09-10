@@ -29,12 +29,12 @@ export const PostForm = () => {
             "placeholder:text-gray-700",
           )}
         />
-        <div
-          className={clsx("text-blue-500 font-bold flex flex-row items-center")}
-        >
-          <IconEarth size={16} />
-          <div className="ml-1">全員が返信できます</div>
-        </div>
+        {/* <div */}
+        {/*   className={clsx("text-blue-500 font-bold flex flex-row items-center")} */}
+        {/* > */}
+        {/*   <IconEarth size={16} /> */}
+        {/*   <div className="ml-1">全員が返信できます</div> */}
+        {/* </div> */}
         <div
           className={clsx(
             "border-t border-t-gray-700 mt-2 pt-3",

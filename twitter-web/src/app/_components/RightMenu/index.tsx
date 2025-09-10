@@ -1,6 +1,7 @@
 import clsx from "clsx";
 import { SearchFilterPresentor } from "../SearchFilter";
 import { SearchForm } from "../SearchForm";
+import { InviteSubscribe } from "../InviteSubscribe";
 
 export const RightMenu = () => {
   return (
@@ -10,6 +11,7 @@ export const RightMenu = () => {
       )}
     >
       <SearchForm />
+      <InviteSubscribe />
       <SearchFilterPresentor />
     </div>
   );

@@ -1,5 +1,6 @@
 import clsx from "clsx";
 import { SearchFilterPresentor } from "../SearchFilter";
+import { SearchForm } from "../SearchForm";
 
 export const RightMenu = () => {
   return (
@@ -8,6 +9,7 @@ export const RightMenu = () => {
         "flex flex-col gap-6 border-t border-t-gray-700 mt-3 pt-3",
       )}
     >
+      <SearchForm />
       <SearchFilterPresentor />
     </div>
   );

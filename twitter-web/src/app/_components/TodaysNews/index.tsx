@@ -35,6 +35,7 @@ export const TodaysNews = () => {
       <div className={clsx("mt-4", "flex flex-col gap-3")}>
         {news.map((n) => (
           <div
+            key={n.title}
             className={clsx(
               "flex flex-row items-start justify-start w-full gap-3",
             )}

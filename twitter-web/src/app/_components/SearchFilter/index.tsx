@@ -1,8 +1,15 @@
+"use client";
 import clsx from "clsx";
 import Link from "next/link";
 import { RadioWithLabel } from "../RaioWithLabel";
+import { useState } from "react";
+
+type SearchTypeAccount = "all" | "followed";
+type SearchTypePlace = "all" | "near";
 
 export const SearchFilterPresentor = () => {
+  const [radioAccount, setRadioAccount] = useState<SearchTypeAccount>("all");
+  const [radioPlace, setRadioPlace] = useState<SearchTypePlace>("all");
   return (
     <div>
       <div
@@ -27,12 +34,19 @@ export const SearchFilterPresentor = () => {
                   label="すべてのアカウント"
                   name="account"
                   value="all"
-                  checked
+                  checked={radioAccount === "all"}
+                  onChange={(e) =>
+                    setRadioAccount(e.target.value as SearchTypeAccount)
+                  }
                 />
                 <RadioWithLabel
                   label="フォローしているアカウント"
                   name="account"
                   value="followed"
+                  checked={radioAccount === "followed"}
+                  onChange={(e) =>
+                    setRadioAccount(e.target.value as SearchTypeAccount)
+                  }
                 />
               </div>
             </div>
@@ -44,12 +58,19 @@ export const SearchFilterPresentor = () => {
                     label="すべての場所"
                     name="place"
                     value="all"
-                    checked
+                    checked={radioPlace === "all"}
+                    onChange={(e) =>
+                      setRadioPlace(e.target.value as SearchTypePlace)
+                    }
                   />
                   <RadioWithLabel
                     label="近くの場所"
                     name="place"
                     value="near"
+                    checked={radioPlace === "near"}
+                    onChange={(e) =>
+                      setRadioPlace(e.target.value as SearchTypePlace)
+                    }
                   />
                 </div>
               </div>

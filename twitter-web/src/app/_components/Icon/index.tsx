@@ -20,6 +20,7 @@ import {
   Earth,
   Heart,
   Upload,
+  X,
 } from "lucide-react";
 
 export const IconHome = (props: LucideProps) => <House {...props} />;
@@ -46,3 +47,4 @@ export const IconCalendar = (props: LucideProps) => (
 export const IconEarth = (props: LucideProps) => <Earth {...props} />;
 export const IconHeart = (props: LucideProps) => <Heart {...props} />;
 export const IconUpload = (props: LucideProps) => <Upload {...props} />;
+export const IconClose = (props: LucideProps) => <X {...props} />;

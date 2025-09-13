@@ -17,7 +17,6 @@ export const RadioWithLabel = (props: Props) => {
         className={clsx("opacity-0 absolute peer")}
         type="radio"
         {...rest}
-        checked
       />
       <div
         className={clsx(

@@ -40,7 +40,7 @@ export default function RootLayout({
         <div className={clsx("w-[600px] min-w-0 border-x border-x-gray-700")}>
           {children}
         </div>
-        <div className={clsx("flex-1")}>
+        <div className={clsx("flex-1 min-w-0")}>
           <RightMenu />
         </div>
       </body>

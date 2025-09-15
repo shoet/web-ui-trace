@@ -4,6 +4,8 @@ import {
   CarouselContinues,
   CarouselWithCenterZoom,
 } from "./_components/Carousel";
+import { ClientScrollFramerMotion } from "./_components/ClientMotionScroller";
+
 export default function Home() {
   return (
     <div>
@@ -62,6 +64,15 @@ export default function Home() {
           </div>
         </div>
       </div>
+      <ClientScrollFramerMotion>
+        <div className={clsx("h-[300px] w-full bg-blue-400")}>hoge</div>
+      </ClientScrollFramerMotion>
+      <ClientScrollFramerMotion>
+        <div className={clsx("h-[300px] w-full bg-green-300")}>hoge</div>
+      </ClientScrollFramerMotion>
+      <ClientScrollFramerMotion>
+        <div className={clsx("h-[300px] w-full bg-purple-300")}>hoge</div>
+      </ClientScrollFramerMotion>
       <div className="bg-linear-to-r/srgb from-indigo-500 to-teal-400 h-[500px]">
         <div
           className={clsx("grid grid-cols-2 gap-4", "max-w-[1200px] flex-1")}

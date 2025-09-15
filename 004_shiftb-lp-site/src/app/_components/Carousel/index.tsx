@@ -1,11 +1,11 @@
 "use client";
-import clsx from "clsx";
+import clsx from "clsx/clsx.mjs";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Pagination, Autoplay, Navigation } from "swiper/modules";
+import { Swiper, SwiperSlide } from "swiper/swiper-react";
+import { Pagination, Autoplay, Navigation } from "swiper/types/modules";
 import { CSSProperties, useEffect, useMemo, useState } from "react";
 
 // https://swiperjs.com/react

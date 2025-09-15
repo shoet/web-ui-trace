@@ -1,7 +1,7 @@
 "use client";
 
 import { PropsWithChildren } from "react";
-import { motion } from "motion/dist/react";
+import { motion } from "motion/react";
 
 export const ClientScrollFramerMotion = (props: {} & PropsWithChildren) => {
   const { children } = props;

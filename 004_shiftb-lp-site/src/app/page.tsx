@@ -1,4 +1,4 @@
-import clsx from "clsx/clsx.mjs";
+import clsx from "clsx";
 import {
   Carousel,
   CarouselContinues,

@@ -1,4 +1,4 @@
-import clsx from "clsx/clsx.mjs";
+import clsx from "clsx";
 import Link from "next/link";
 
 export const Header = () => {

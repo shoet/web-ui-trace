@@ -5,6 +5,7 @@ import {
   CarouselWithCenterZoom,
 } from "./_components/Carousel";
 import { ClientScrollFramerMotion } from "./_components/ClientMotionScroller";
+import { PriceTable } from "./_components/PriceTable";
 
 export default function Home() {
   return (
@@ -64,6 +65,7 @@ export default function Home() {
           </div>
         </div>
       </div>
+      <PriceTable className={clsx("max-w-[1000px] mx-auto my-4")} />
       <ClientScrollFramerMotion>
         <div className={clsx("h-[300px] w-full bg-blue-400")}>hoge</div>
       </ClientScrollFramerMotion>

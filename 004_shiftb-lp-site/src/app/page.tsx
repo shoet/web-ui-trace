@@ -17,25 +17,23 @@ export default function Home() {
       <div>
         <div
           className={clsx(
-            "h-dvh w-full p-4 flex justify-center max-w-[1440px] mx-auto",
+            "w-full p-4 flex justify-center max-w-[1440px] mx-auto",
           )}
         >
           <div className={clsx("flex-1 px-[100px]", "grid grid-cols-2 gap-4")}>
             <div>
-              <div className={clsx("mx-auto max-w-[375px] pl-6")}>
-                <div
-                  className={clsx(
-                    "relative z-0 inline whitespace-pre text-sm font-medium leading-[20.27px] md:whitespace-normal md:text-xl",
-                  )}
-                >
+              <div className={clsx("mx-auto  pl-6")}>
+                {/*スタッキングコンテキストを作る*/}
+                <div className={clsx("relative z-[1]")}>
                   <div className={clsx("text-xl font-bold")}>
-                    Webエンジニア特化型スクール
+                    React, Next.js 特化型Webエンジニア養成スクール
                   </div>
                   <div
+                    style={{
+                      clipPath: "polygon(0 0, 100% 0, 98% 100%, 0 100%)",
+                    }}
                     className={clsx(
-                      "absolute z-[20]  ml-[-1000px] h-5 w-[50vw] translate-y-[calc(-40%-1px)] rounded-br-sm bg-yellow-300 pl-[calc(1000px+49.5vw)]",
-                      " after:absolute after:right-[-13px] after:top-0 after:h-5 after:w-[14px] after:bg-yellow-300 after:content-[''] ",
-                      "after:[clip-path:polygon(0_0,100%_0,0_100%)] md:ml-[-500%] md:h-8 md:w-[50vw] md:pl-[calc(50 z-00%+108%)] md:after:right-[-22.7px] md:after:h-8 md:after:w-6",
+                      "absolute top-[20px] right-0 z-[-1] -translate-y-1/3 bg-yellow-300 h-[30px] w-[100vw] pl-[50vw]",
                     )}
                   ></div>
                 </div>
@@ -76,7 +74,7 @@ export default function Home() {
       </div>
       <div
         className={clsx(
-          "my-4",
+          "py-4",
           "bg-white flex flex-col justify-center items-center w-full gap-4",
         )}
       >
@@ -85,7 +83,9 @@ export default function Home() {
           <FreeApplyButton />
         </button>
       </div>
-      <PriceTable className={clsx("max-w-[1000px] mx-auto my-4")} />
+      <div className={clsx("bg-white")}>
+        <PriceTable className={clsx("max-w-[1000px] mx-auto")} />
+      </div>
       <ClientScrollFramerMotion>
         <div className={clsx("h-[300px] w-full bg-blue-400")}>hoge</div>
       </ClientScrollFramerMotion>

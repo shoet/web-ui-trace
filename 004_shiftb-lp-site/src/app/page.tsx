@@ -8,6 +8,7 @@ import { ClientScrollFramerMotion } from "./_components/ClientMotionScroller";
 import { PriceTable } from "./_components/PriceTable";
 import { FreeApplyButton, FreeApplyText } from "./_components/FreeApplyButton";
 import { Header } from "./_components/Header";
+import { IntroductionCarousel } from "./_components/IntroductionCarousel";
 
 export default function Home() {
   return (
@@ -19,7 +20,7 @@ export default function Home() {
             "h-dvh w-full p-4 flex justify-center max-w-[1440px] mx-auto",
           )}
         >
-          <div className={clsx("flex-1", "grid grid-cols-2 gap-4")}>
+          <div className={clsx("flex-1 px-[100px]", "grid grid-cols-2 gap-4")}>
             <div>
               <div className={clsx("mx-auto max-w-[375px] pl-6")}>
                 <div
@@ -39,16 +40,22 @@ export default function Home() {
                   ></div>
                 </div>
               </div>
-              <div className={clsx("mt-4")}>
+              <div
+                className={clsx(
+                  "mt-[100px]",
+                  "flex flex-col items-start gap-2",
+                  "break-words min-w-0",
+                )}
+              >
                 <span className={clsx("text-3xl font-bold")}>
-                  <span className={clsx("text-3xl text-blue-500 font-bold")}>
+                  <span className={clsx("text-5xl text-blue-500 font-bold")}>
                     完全個別指導
                   </span>
                   体制
                 </span>
                 <br />
                 <span className={clsx("text-3xl font-bold")}>
-                  <span className={clsx("text-3xl text-blue-500 font-bold")}>
+                  <span className={clsx("text-5xl text-blue-500 font-bold")}>
                     モダンなスキルが身につく
                   </span>
                 </span>
@@ -58,10 +65,11 @@ export default function Home() {
                 </span>
               </div>
             </div>
-            <div>
-              <Carousel />
-              <CarouselContinues />
-              <CarouselWithCenterZoom />
+            <div className={clsx("flex flex-col items-center gap-4")}>
+              <h1 className={clsx("text-2xl font-bold")}>
+                こんなアプリが作れるようになる！
+              </h1>
+              <IntroductionCarousel />
             </div>
           </div>
         </div>

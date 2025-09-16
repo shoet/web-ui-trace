@@ -1,12 +1,20 @@
 import clsx from "clsx";
 import Link from "next/link";
+import { ComponentProps } from "react";
 
-export const Header = () => {
+export const Header = (props: ComponentProps<"header">) => {
+  const { className, ...rest } = props;
   return (
-    <header className={clsx("flex flex-row items-center justify-center py-4")}>
+    <header
+      className={clsx(
+        "flex flex-row items-center justify-center py-4 w-full backdrop-blur-xl",
+        className,
+      )}
+      {...rest}
+    >
       <div
         className={clsx(
-          "max-w-[1400px] flex flex-row items-center justify-between flex-1",
+          "max-w-[1400px] flex flex-row items-center justify-between flex-1 backdrop-opacity-80",
         )}
       >
         <div className={clsx("text-2xl font-bold")}>Logo</div>

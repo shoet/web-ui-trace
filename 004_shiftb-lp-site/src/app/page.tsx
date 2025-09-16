@@ -6,11 +6,14 @@ import {
 } from "./_components/Carousel";
 import { ClientScrollFramerMotion } from "./_components/ClientMotionScroller";
 import { PriceTable } from "./_components/PriceTable";
+import { FreeApplyButton, FreeApplyText } from "./_components/FreeApplyButton";
+import { Header } from "./_components/Header";
 
 export default function Home() {
   return (
-    <div>
-      <div className={clsx("bg-[url(/background/corporate_1.jpg)]")}>
+    <div className={clsx("bg-[url(/background/corporate_1.jpg)] bg-no-repeat")}>
+      <Header className={clsx("h-[100px] top-0 left-0 sticky z-[9999]")} />
+      <div>
         <div
           className={clsx(
             "h-dvh w-full p-4 flex justify-center max-w-[1440px] mx-auto",
@@ -32,11 +35,9 @@ export default function Home() {
                       "absolute z-[20]  ml-[-1000px] h-5 w-[50vw] translate-y-[calc(-40%-1px)] rounded-br-sm bg-yellow-300 pl-[calc(1000px+49.5vw)]",
                       " after:absolute after:right-[-13px] after:top-0 after:h-5 after:w-[14px] after:bg-yellow-300 after:content-[''] ",
                       "after:[clip-path:polygon(0_0,100%_0,0_100%)] md:ml-[-500%] md:h-8 md:w-[50vw] md:pl-[calc(50 z-00%+108%)] md:after:right-[-22.7px] md:after:h-8 md:after:w-6",
-                      // "absolute top-0 z-[-2]",
-                      // 'after:content-[""] h-[30px] w-full bg-yellow-300',
                     )}
-                  ></div>{" "}
-                </div>{" "}
+                  ></div>
+                </div>
               </div>
               <div className={clsx("mt-4")}>
                 <span className={clsx("text-3xl font-bold")}>
@@ -64,6 +65,17 @@ export default function Home() {
             </div>
           </div>
         </div>
+      </div>
+      <div
+        className={clsx(
+          "my-4",
+          "bg-white flex flex-col justify-center items-center w-full gap-4",
+        )}
+      >
+        <FreeApplyText />
+        <button className={clsx("hover:scale-105 transition-all")}>
+          <FreeApplyButton />
+        </button>
       </div>
       <PriceTable className={clsx("max-w-[1000px] mx-auto my-4")} />
       <ClientScrollFramerMotion>

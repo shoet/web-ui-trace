@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { CSSProperties } from "react";
+import { ComponentProps, CSSProperties } from "react";
 import { ArrowBigDown, CirclePlus, Bookmark } from "lucide-react";
 import clsx from "clsx";
 
@@ -25,14 +25,17 @@ const AvatarImage = (props: { size: number; src: string }) => {
   );
 };
 
-export const ArchivementCard = () => {
+export const ArchivementCard = (props: ComponentProps<"div">) => {
+  const { className, ...rest } = props;
   return (
     <div
       className={clsx(
         "border-5 border-blue-500 rounded-md",
         "p-6 flex flex-col items-center gap-8",
         "relative z-1",
+        className,
       )}
+      {...rest}
     >
       <Bookmark
         fill="var(--color-blue-500)"

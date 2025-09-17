@@ -1,3 +1,7 @@
+"use client";
+import "swiper/css";
+import "swiper/css/navigation";
+
 import clsx from "clsx";
 import {
   Carousel,
@@ -9,6 +13,18 @@ import { PriceTable } from "./_components/PriceTable";
 import { FreeApplyButton, FreeApplyText } from "./_components/FreeApplyButton";
 import { Header } from "./_components/Header";
 import { IntroductionCarousel } from "./_components/IntroductionCarousel";
+import { AchievementsCarousel } from "./_components/AchievementsCarousel";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { ComponentProps } from "react";
+
+const Box = (props: { text: string } & ComponentProps<"div">) => {
+  const { className, ...rest } = props;
+  return (
+    <div className={clsx("w-[300px] h-[300px]", className)} {...rest}>
+      {props.text}
+    </div>
+  );
+};
 
 export default function Home() {
   return (
@@ -86,6 +102,56 @@ export default function Home() {
       <div className={clsx("bg-white")}>
         <PriceTable className={clsx("max-w-[1000px] mx-auto")} />
       </div>
+      <div className={clsx("bg-white mt-4 flex flex-row justify-center")}>
+        <h1 className={clsx("text-2xl font-bold")}>
+          受講生の実績、どんどん増えてます！
+        </h1>
+      </div>
+      <div className={clsx("w-full flex justify-center h-[500px]")}>
+        <div
+          className={clsx("flex justify-center items-center w-[1300px] h-full")}
+        >
+          <Swiper
+            className={clsx(
+              "h-full",
+              // "bg-purple-500",
+              "[&>.swiper-wrapper]:items-center", // wrapperの中央揃え
+              "[&_.swiper-slide-active]:scale-110", // swiper-slideが中心に来たときの装飾
+              "[&_.swiper-slide]:!transition-transform [&_.swiper-slide]:!duration-150 [&_.swiper-slide]:!ease-in-out", // swiper-slideの拡大縮小をなめらかにするためのアニメーション
+              "[&_.swiper-slide]:!flex [&_.swiper-slide]:!justify-center [&_.swiper-slide]:!h-auto", // 上下中央寄せにする措置
+            )}
+            slidesPerView={3}
+            spaceBetween={40}
+            // centeredSlides
+            // https://swiperjs.com/swiper-api#param-loop
+            // https://qiita.com/takopitto/questions/c9e4268742358d8eeef8
+            // loop: trueを使用する場合、要素数 >= slidesPerView * 2である必要がある
+            loop={true}
+            centeredSlides
+            initialSlide={0}
+          >
+            <SwiperSlide>
+              <Box text="box1" className="bg-blue-500" />
+            </SwiperSlide>
+            <SwiperSlide>
+              <Box text="box2" className="bg-red-500" />
+            </SwiperSlide>
+            <SwiperSlide>
+              <Box text="box3" className="bg-yellow-500" />
+            </SwiperSlide>
+            <SwiperSlide>
+              <Box text="box4" className="bg-purple-500" />
+            </SwiperSlide>
+            <SwiperSlide>
+              <Box text="box5" className="bg-amber-500" />
+            </SwiperSlide>
+            <SwiperSlide>
+              <Box text="box6" className="bg-cyan-700" />
+            </SwiperSlide>
+          </Swiper>
+        </div>
+      </div>
+
       <ClientScrollFramerMotion>
         <div className={clsx("h-[300px] w-full bg-blue-400")}>hoge</div>
       </ClientScrollFramerMotion>

@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import clsx from "clsx";
+import { SideMenu } from "./_compoments/SideMenu";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -27,7 +29,14 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        {children}
+        <header></header>
+        <div className={clsx("flex flex-row items-start justify-between")}>
+          <aside className={clsx("h-dvh border-r border-r-gray-300 pr-2")}>
+            <SideMenu />
+          </aside>
+          {children}
+        </div>
+        <footer></footer>
       </body>
     </html>
   );

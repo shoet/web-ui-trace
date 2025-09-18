@@ -1,4 +1,12 @@
-import { Home, LucideProps, User, Search, Tv, LayoutGrid } from "lucide-react";
+import {
+  Home,
+  LucideProps,
+  User,
+  Search,
+  Tv,
+  LayoutGrid,
+  X,
+} from "lucide-react";
 
 export const IconHome = (props: LucideProps) => {
   return <Home {...props} />;
@@ -14,4 +22,7 @@ export const IconTV = (props: LucideProps) => {
 };
 export const IconGrid = (props: LucideProps) => {
   return <LayoutGrid {...props} />;
+};
+export const IconX = (props: LucideProps) => {
+  return <X {...props} />;
 };

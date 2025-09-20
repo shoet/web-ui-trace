@@ -43,6 +43,7 @@ export default function Home() {
           },
         ]}
       />
+      <div className={clsx("p-6")}></div>
     </div>
   );
 }

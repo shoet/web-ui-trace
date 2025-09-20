@@ -5,6 +5,8 @@ import clsx from "clsx";
 import { SideMenu } from "./_compoments/SideMenu";
 import { SearchBar } from "./_compoments/SearchBar";
 import { PopupMenuButton } from "./_compoments/PopupMenuButton";
+import Link from "next/link";
+import { Footer } from "./_compoments/Footer";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -34,9 +36,10 @@ export default function RootLayout({
         <div className={clsx("grid grid-areas-")}></div>
         <header
           className={clsx(
-            "h-[70px]",
+            "h-[70px] bg-white",
             "grid grid-cols-[1fr_auto_1fr] items-center",
             "px-6 py-0",
+            "sticky top-0 z-[2]",
           )}
         >
           <div>ロゴ</div>
@@ -60,11 +63,17 @@ export default function RootLayout({
           >
             <SideMenu />
           </aside>
-          <div className={clsx("w-[calc(100%-var(--menu-width))]")}>
-            {children}
+          <div
+            className={clsx(
+              "w-[calc(100%-var(--menu-width))]",
+              "relative z-[1]",
+              "flex flex-col min-h-screen",
+            )}
+          >
+            <div className={clsx("flex-1")}>{children}</div>
+            <Footer />
           </div>
         </div>
-        <footer></footer>
       </body>
     </html>
   );

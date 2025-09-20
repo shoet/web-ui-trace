@@ -10,6 +10,9 @@ import {
   Dot,
   ChevronRight,
   ChevronLeft,
+  XIcon,
+  Twitter,
+  Instagram,
 } from "lucide-react";
 
 export const IconHome = (props: LucideProps) => {
@@ -41,4 +44,10 @@ export const IconArrowRight = (props: LucideProps) => {
 };
 export const IconArrowLeft = (props: LucideProps) => {
   return <ChevronLeft {...props} />;
+};
+export const IconTwitter = (props: LucideProps) => {
+  return <Twitter {...props} />;
+};
+export const IconInstagram = (props: LucideProps) => {
+  return <Instagram {...props} />;
 };

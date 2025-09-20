@@ -42,7 +42,7 @@ export const MainCarousel = (props: Props) => {
         onRealIndexChange={(swiper) => {
           setCurrentSlide(items[swiper.realIndex]);
         }}
-        slidesPerView={1.5}
+        slidesPerView={2}
         initialSlide={0}
         centeredSlides
         spaceBetween={10}
@@ -88,8 +88,8 @@ export const MainCarousel = (props: Props) => {
         </button>
       </Swiper>
       <div className={clsx("w-full flex justify-center")}>
-        <div className={clsx("w-[66%] font-bold")}>{currentSlide?.title}</div>
-        {/* 表示スライド枚数1.5の割合に合わせて幅を設定 */}
+        <div className={clsx("w-[50%] font-bold")}>{currentSlide?.title}</div>
+        {/* 表示スライド枚数2の割合に合わせて幅を設定 */}
       </div>
     </div>
   );

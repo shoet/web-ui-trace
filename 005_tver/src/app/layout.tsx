@@ -53,10 +53,16 @@ export default function RootLayout({
           </div>
         </header>
         <div className={clsx("flex flex-row items-start justify-between")}>
-          <aside className={clsx("h-dvh border-r border-r-gray-300 pr-2")}>
+          <aside
+            className={clsx(
+              "h-dvh border-r border-r-gray-300 pr-2 w-[var(--menu-width)]",
+            )}
+          >
             <SideMenu />
           </aside>
-          {children}
+          <div className={clsx("w-[calc(100%-var(--menu-width))]")}>
+            {children}
+          </div>
         </div>
         <footer></footer>
       </body>

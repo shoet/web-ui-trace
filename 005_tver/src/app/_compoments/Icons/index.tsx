@@ -9,6 +9,7 @@ import {
   EllipsisVertical,
   Dot,
   ChevronRight,
+  ChevronLeft,
 } from "lucide-react";
 
 export const IconHome = (props: LucideProps) => {
@@ -37,4 +38,7 @@ export const IconDot = (props: LucideProps) => {
 };
 export const IconArrowRight = (props: LucideProps) => {
   return <ChevronRight {...props} />;
+};
+export const IconArrowLeft = (props: LucideProps) => {
+  return <ChevronLeft {...props} />;
 };

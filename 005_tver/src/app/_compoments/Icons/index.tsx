@@ -6,6 +6,9 @@ import {
   Tv,
   LayoutGrid,
   X,
+  EllipsisVertical,
+  Dot,
+  ChevronRight,
 } from "lucide-react";
 
 export const IconHome = (props: LucideProps) => {
@@ -25,4 +28,13 @@ export const IconGrid = (props: LucideProps) => {
 };
 export const IconX = (props: LucideProps) => {
   return <X {...props} />;
+};
+export const IconMenuVertical = (props: LucideProps) => {
+  return <EllipsisVertical {...props} />;
+};
+export const IconDot = (props: LucideProps) => {
+  return <Dot {...props} />;
+};
+export const IconArrowRight = (props: LucideProps) => {
+  return <ChevronRight {...props} />;
 };

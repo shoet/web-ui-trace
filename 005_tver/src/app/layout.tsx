@@ -3,6 +3,8 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import clsx from "clsx";
 import { SideMenu } from "./_compoments/SideMenu";
+import { SearchBar } from "./_compoments/SearchBar";
+import { PopupMenuButton } from "./_compoments/PopupMenuButton";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -29,7 +31,27 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <header></header>
+        <div className={clsx("grid grid-areas-")}></div>
+        <header
+          className={clsx(
+            "h-[70px]",
+            "grid grid-cols-[1fr_auto_1fr] items-center",
+            "px-6 py-0",
+          )}
+        >
+          <div>ロゴ</div>
+          <SearchBar className={clsx("w-[300px]")} />
+          <div className={clsx("flex flex-row items-center justify-end gap-4")}>
+            <PopupMenuButton />
+            <button
+              className={clsx(
+                "bg-sky-500 rounded-sm font-bold text-sm text-white px-3 py-1.5 cursor-pointer hover:brightness-90",
+              )}
+            >
+              ログイン
+            </button>
+          </div>
+        </header>
         <div className={clsx("flex flex-row items-start justify-between")}>
           <aside className={clsx("h-dvh border-r border-r-gray-300 pr-2")}>
             <SideMenu />

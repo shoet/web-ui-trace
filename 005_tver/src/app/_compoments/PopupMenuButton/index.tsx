@@ -9,7 +9,7 @@ export const PopupMenuButton = () => {
   return (
     <button
       className={clsx(
-        "relative",
+        "relative z-[1]",
         "w-[30px] h-[30px]",
         "flex justify-center items-center",
         "rounded-md hover:bg-gray-200 cursor-pointer",
@@ -34,7 +34,7 @@ export const PopupMenuButton = () => {
         >
           <PopupMenu
             className={clsx(
-              "w-auto shadow-md rounded-md whitespace-nowrap", // absoluteに置くとw-fullが効かないのでw-auto
+              "w-auto shadow-md rounded-md whitespace-nowrap bg-white", // absoluteに置くとw-fullが効かないのでw-auto
             )}
             dir="ltr" // 中身は通常通りにしたいのでまた反転
           />

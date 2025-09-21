@@ -4,7 +4,7 @@ import Image from "next/image";
 import { useRef, useState } from "react";
 import "swiper/css";
 import { Swiper, SwiperClass, SwiperSlide, useSwiper } from "swiper/react";
-import { Autoplay } from "swiper/modules";
+import { Autoplay, Mousewheel } from "swiper/modules";
 import Link from "next/link";
 import { IconArrowLeft, IconArrowRight } from "../Icons";
 
@@ -21,11 +21,14 @@ type Props = {
 export const MainCarousel = (props: Props) => {
   const { items } = props;
   const [currentSlide, setCurrentSlide] = useState<MainCarouselItem>();
-  const swiperHook = useSwiper();
   const swiperRef = useRef<SwiperClass>(null);
+  const [showNavigateButton, setShowNavigateButton] = useState(false);
 
   return (
-    <div>
+    <div
+      onMouseOver={() => setShowNavigateButton(true)}
+      onMouseOut={() => setShowNavigateButton(false)}
+    >
       <Swiper
         className={clsx(
           "relative z-[1]",
@@ -50,7 +53,10 @@ export const MainCarousel = (props: Props) => {
         autoplay={{
           delay: 3000,
         }}
-        modules={[Autoplay]}
+        modules={[Autoplay, Mousewheel]}
+        mousewheel={{
+          forceToAxis: true,
+        }}
       >
         {items.map((i) => (
           <SwiperSlide>
@@ -66,26 +72,30 @@ export const MainCarousel = (props: Props) => {
             </Link>
           </SwiperSlide>
         ))}
-        <button
-          className={clsx(
-            "absolute z-[9999] top-1/2 translate-y-[-50%] left-0",
-            "w-[70px] h-[70px] bg-sky-500 opacity-70 rounded-r-full cursor-pointer",
-            "flex justify-center items-center",
-          )}
-          onClick={() => swiperRef.current?.slidePrev()}
-        >
-          <IconArrowLeft className={clsx("text-white")} size={40} />
-        </button>
-        <button
-          className={clsx(
-            "absolute z-[9999] top-1/2 translate-y-[-50%] right-0",
-            "w-[70px] h-[70px] bg-sky-500 opacity-70 rounded-l-full cursor-pointer",
-            "flex justify-center items-center",
-          )}
-          onClick={() => swiperRef.current?.slideNext()}
-        >
-          <IconArrowRight className={clsx("text-white")} size={40} />
-        </button>
+        {showNavigateButton && (
+          <>
+            <button
+              className={clsx(
+                "absolute z-[9999] top-1/2 translate-y-[-50%] left-0",
+                "w-[70px] h-[70px] bg-sky-500 opacity-70 rounded-r-full cursor-pointer",
+                "flex justify-center items-center",
+              )}
+              onClick={() => swiperRef.current?.slidePrev()}
+            >
+              <IconArrowLeft className={clsx("text-white")} size={40} />
+            </button>
+            <button
+              className={clsx(
+                "absolute z-[9999] top-1/2 translate-y-[-50%] right-0",
+                "w-[70px] h-[70px] bg-sky-500 opacity-70 rounded-l-full cursor-pointer",
+                "flex justify-center items-center",
+              )}
+              onClick={() => swiperRef.current?.slideNext()}
+            >
+              <IconArrowRight className={clsx("text-white")} size={40} />
+            </button>
+          </>
+        )}
       </Swiper>
       <div className={clsx("w-full flex justify-center")}>
         <div className={clsx("w-[50%] font-bold")}>{currentSlide?.title}</div>

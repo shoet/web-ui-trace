@@ -5,6 +5,7 @@
   --foreground: #171717;
 
   --menu-width: 250px;
+  --header-height: 70px;
 }
 
 @theme inline {

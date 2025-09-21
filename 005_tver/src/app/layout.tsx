@@ -36,7 +36,7 @@ export default function RootLayout({
         <div className={clsx("grid grid-areas-")}></div>
         <header
           className={clsx(
-            "h-[70px] bg-white",
+            "h-[var(--header-height)] bg-white",
             "grid grid-cols-[1fr_auto_1fr] items-center",
             "px-6 py-0",
             "sticky top-0 z-[2]",
@@ -58,7 +58,8 @@ export default function RootLayout({
         <div className={clsx("flex flex-row items-start justify-between")}>
           <aside
             className={clsx(
-              "h-dvh border-r border-r-gray-300 pr-2 w-[var(--menu-width)]",
+              "sticky top-[var(--header-height)]",
+              "h-[calc(100vh-var(--header-height))] border-r border-r-gray-300 pr-2 w-[var(--menu-width)]",
             )}
           >
             <SideMenu />
